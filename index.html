@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme=dark>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- WebFonts-->
+     <link rel="stylesheet" href="./css/all.min.css">
+     <!--Bootstrap-->
+     <link rel="stylesheet" href="./css/bootstrap.min.css">
+     <!--Main StyleSheet-->
+     <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div>
+        <div class="container py-4">
+            <h1 class="text-center h2 fw-bold">Product Management System</h1>
+            <form>
+                <div class="form-floating mb-3">
+                    <input type="text" 
+                    class="form-control" 
+                    id="name" 
+                    placeholder="name@example.com"
+                    oninput="validate(nameRegex,nameinput)"
+                    >
+                    
+                    <label for="floatingInput">Name</label>
+                    <p class="error mt-2 px-2  d-none">
+                      Name must start with Capital letter followed by 3 character  
+                    </p>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    id="category" 
+                    placeholder="name@example.com"
+                    list="categories"
+                    autocomplete="off"
+                    oninput="validate(categpryRegex,categoryinput)"
+                    >
+                    <label for="floatingInput">Category</label>
+                    <p class="error mt-2 px-2  d-none">
+                      Category must start with Capital letter followed by 3 character  
+                    </p>
+                    <datalist id="categories">
+                        <option>phone</option>
+                        <option>screen</option>
+                        <option>laptop</option>
+                        <option>clothes</option>
+                        <option>Camera</option>
+                    </datalist>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="number" 
+                    class="form-control" 
+                    id="price" 
+                    placeholder="name@example.com"
+                    oninput="validate(priceRegex,priceinput)"
+                    >
+                    <label for="floatingInput">Price</label>
+                    <p class="error mt-2 px-2  d-none">
+                      price must start with number  between 0 to 1000  
+                    </p>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <textarea 
+                     class="form-control" 
+                     id="description" 
+                     placeholder="text" 
+                     oninput="validate(descriptionRegex,descriptioninput)"
+                     ></textarea>
+                    <label for="description">Description</label>
+                    <p class="error mt-2 px-2  d-none">
+                      Description must start with Capital letter followed by 25 character  
+                    </p>
+                  </div>
+                 <input type="file" 
+                 accept="image/*"
+                 class="form-control mb-3" 
+                 id="imageInput">
+                  <button 
+                  class="btn btn-primary" 
+                  type="button" id="add" 
+                  onclick="Addproduct()"
+                  > Add product
+                </button>
+                  <button 
+                  class="btn btn-info d-none" 
+                  type="button" id="update" 
+                  onclick="Updateproduct()"
+                  > 
+                  update product 
+                </button>
+            </form>
+            <input type="search" 
+            class="form-control my-3 w-75 mx-auto " 
+            placeholder="Search Products..."
+            id="searchinput"
+            oninput="searchproducts()"
+            autocomplete="off"
+            >
+           
+            <div class="row mt-4 g-3" id="productcontainer">
+              
+            </div>
+        </div>
+       
+    </div>
+
+
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+body {
+    font-family: "Lora", serif;
+}
+.form-control:focus {
+    box-shadow: none;
+    border-color: black;
+    
+}
+:root {
+    --main-dark-color: #101214;
+    --secondary-dark-color: #161a1d;
+    --tertiary-dark-color: #333;
+  }
+
+  .inner {
+    background-color: var(--tertiary-dark-color);
+    padding: 25px;
+  }
+  .inner img {
+    height: 150px;
+    object-fit: contain;
+  }
+
+  input[type = search]::placeholder {
+    color: #f1f1f1;
+  }
+  .error {
+    color: red;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .error::before {
+    content: "* ";
+  }
